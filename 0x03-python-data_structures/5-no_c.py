@@ -8,4 +8,5 @@ def no_c(my_string):
             if 'c' == c or 'C' == c:
                 continue
             new += c
-    return new
+        return new
+    return my_string
