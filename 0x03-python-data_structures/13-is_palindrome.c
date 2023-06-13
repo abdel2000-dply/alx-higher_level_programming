@@ -10,26 +10,20 @@
 int is_palindrome(listint_t **head)
 {
 	int ar[1000000], i, j;
-	int size = 0;
 	listint_t *curr = *head;
 
 	if (*head == NULL || (*head)->next == NULL)
 		return (1);
 
-	while (curr != NULL)
-	{
-		size++;
-		curr = curr->next;
-	}
 	curr = *head;
-	for (i = 0; i < size; i++)
+	for (i = 0; curr != NULL; i++)
 	{
 		ar[i] = curr->n;
 		curr = curr->next;
 	}
-	for (i = 0, j = size - 1; i < j; i++, j--)
+	for (j = 0; j < i; j++, i--)
 	{
-		if (ar[i] != ar[j])
+		if (ar[j] != ar[i])
 			return (0);
 	}
 	return (1);
