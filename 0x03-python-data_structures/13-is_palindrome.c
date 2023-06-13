@@ -9,7 +9,7 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int ar[1000], i, j;
+	int ar[10000000], i, j;
 	int size = 0;
 	listint_t *curr = *head;
 
