@@ -2,6 +2,7 @@
 
 def list_division(my_list_1, my_list_2, list_length):
     res = []
+    div = 0
     for i in range(list_length):
         try:
             div = my_lisy_1[i] / my_list_2[i]
