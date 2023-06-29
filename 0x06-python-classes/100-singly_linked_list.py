@@ -6,13 +6,20 @@ class Node:
     """class Node"""
 
     def __init__(self, data, next_node=None):
-        """Init a Node"""
+        """
+        Init a Node
+
+        Args:
+            data (int): The data value to be stored in the node.
+            next_node (Node, optional): The next node.
+        """
+
         self.data = data
         self.next_node = next_node
 
     @property
     def data(self):
-        """Get data"""
+        """Returns: data"""
         return self.__data
 
     @data.setter
