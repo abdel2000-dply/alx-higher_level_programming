@@ -6,25 +6,25 @@ class Node:
     """class Node"""
 
     def __init__(self, data, next_node=None):
-        """init a Node"""
+        """Init a Node"""
         self.data = data
         self.next_node = next_node
 
     @property
     def data(self):
-        """get data"""
+        """Get data"""
         return self.__data
 
     @data.setter
     def data(self, n):
-        """set data"""
+        """Set data"""
         if type(n) is not int:
             raise TypeError('data must be an integer')
         self.__data = n
 
     @proprty
     def next_node(self):
-        """get next node"""
+        """Get next node"""
         return self.__next_node
 
     @next_node.setter
@@ -37,11 +37,11 @@ class Node:
     class SinglyLinkedList:
         """Sinlgy Linked List"""
         def __init__(self):
-            """init empty list"""
+            """Init empty list"""
             self.head = None
 
         def sorted_insert(self, value):
-            """insert a node"""
+            """Insert a node"""
             new_node = Node(value)
             if self.head is None:
                 self.head = new_node
@@ -57,7 +57,7 @@ class Node:
                 curr.next_node = new_node
 
         def __str__(self):
-            """str representation"""
+            """Str representation"""
             curr = self.head
             str = ""
             while curr is not None:
