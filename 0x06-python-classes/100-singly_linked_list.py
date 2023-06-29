@@ -29,7 +29,7 @@ class Node:
             raise TypeError('data must be an integer')
         self.__data = n
 
-    @proprty
+    @property
     def next_node(self):
         """Get next node"""
         return self.__next_node
@@ -41,33 +41,36 @@ class Node:
             raise TypeError("next_node must be a Node object")
         self.__next_node = n
 
-    class SinglyLinkedList:
-        """Sinlgy Linked List"""
-        def __init__(self):
-            """Init empty list"""
-            self.head = None
 
-        def sorted_insert(self, value):
-            """Insert a node"""
-            new_node = Node(value)
-            if self.head is None:
-                self.head = new_node
-            elif value <= self.head.data:
-                new_node.next_node = self.head
-                self.head = new_node
-            else:
-                curr = self.head
-                while curr.next_node is not None \
-                        and value > curr.next_node.data:
-                    curr = curr.next_node
-                new_node.next_node = curr.next_node
-                curr.next_node = new_node
+class SinglyLinkedList:
+    """Sinlgy Linked List"""
 
-        def __str__(self):
-            """Str representation"""
-            curr = self.head
-            str = ""
-            while curr is not None:
-                str += str(curr.data) + "\n"
+    def __init__(self):
+        """Init empty list"""
+        self.__head = None
+
+    def sorted_insert(self, value):
+        """Insert a node"""
+        new_node = Node(value)
+        if self.__head is None:
+            self.__head = new_node
+        elif value <= self.__head.data:
+            new_node.next_node = self.__head
+            self.__head = new_node
+        else:
+            curr = self.__head
+            while curr.next_node is not None and value > curr.next_node.data:
                 curr = curr.next_node
-            return str
+            new_node.next_node = curr.next_node
+            curr.next_node = new_node
+
+    def __str__(self):
+        """Str representation"""
+        curr = self.__head
+        result = ""
+        while curr is not None:
+            result += str(curr.data)
+            curr = curr.next_node
+            if curr is not None:
+                result += "\n"
+        return result
