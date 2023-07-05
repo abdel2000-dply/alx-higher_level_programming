@@ -11,7 +11,7 @@ def add_integer(a, b=98):
         b (int or float): sec number, default is 98.
 
     Returns:
-        a + b
+        int: a + b
 
     Raises:
         TypeError: If `a` or `b` is not an integer or float.
@@ -22,8 +22,3 @@ def add_integer(a, b=98):
         raise TypeError("b must be an integer")
 
     return int(a) + int(b)
-
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testfile("tests/0-add_integer.txt")
