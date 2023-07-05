@@ -20,8 +20,7 @@ TypeError: first_name must be a string
 Traceback (most recent call last):
 TypeError: last_name must be a string
 
+>>> say_my_name("Joy")
+My name is Joy 
 >>> say_my_name("Joy", "Smith")
 My name is Joy Smith
-
->>> say_my_name("Joy")
-My name is Joy
