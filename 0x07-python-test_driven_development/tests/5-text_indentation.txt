@@ -19,6 +19,10 @@ How are you:
 <BLANKLINE>
 John
 
+>>> text_indentation(None)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
 >>> text_indentation(12)
 Traceback (most recent call last):
 ...
