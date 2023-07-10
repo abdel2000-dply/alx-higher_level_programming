@@ -2,9 +2,10 @@
 """Module print_sorted"""
 
 
-Class MyList(list):
-	"""Class"""
+class MyList(list):
+    """Class"""
+
     def print_sorted(self):
         """the list sorted in ascending order"""
-	sorted_list = sorted(self)
+        sorted_list = sorted(self)
         print(sorted_list)
