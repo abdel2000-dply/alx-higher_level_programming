@@ -1,10 +1,15 @@
 #!/usr/bin/python3
 """ Base Class """
+
+
 class Base:
-    """The goal of this class is to manage id attribute in all your future classes"""
+    """The goal: manage id attribute in all your future classes"""
+
     __nb_objects = 0
+
     def __init__(self, id=None):
         """ Iniyialize an instance """
+
         if id is not None:
             self.id = id
         else:
