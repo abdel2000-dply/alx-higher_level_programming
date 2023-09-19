@@ -79,3 +79,9 @@ class Rectangle(Base):
         """the string representation of Rectangle"""
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
                 self.__y, self.__width, self.__height))
+
+    def update(self, *args):
+        """Updates attributes"""
+        att = ["id", "width", "height", "x", "y"]
+        for i in range(len(args)):
+            setattr(self, att[i], args[i])
