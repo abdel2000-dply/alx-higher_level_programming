@@ -16,3 +16,22 @@ class Square(Rectangle):
         """String representation"""
         return ("[Square] ({}) {}/{} - {}"
                 .format(self.id, self.x, self.y, self.width))
+
+    @property
+    def size(self):
+        return self.width
+
+    @size.setter
+    def size(self, v):
+        self.width = v
+        self.height = v
+
+    def update(self, *args, **kwargs):
+        """ Update attributes """
+        att = ["id", "size", "x", "y"]
+        if args:
+            for i in range(len(args)):
+                setattr(self, att[i], args[i])
+        else:
+            for k, v in kwargs.items():
+                setattr(self, k, v)
