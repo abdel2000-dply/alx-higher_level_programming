@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 function add (a, b) {
-	  console.log(a + b);
+  console.log(a + b);
 }
 
 const a = +process.argv[2];
