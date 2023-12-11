@@ -2,7 +2,7 @@
 
 const x = parseInt(process.argv[2]);
 
-if (isnan(x) || x < 0) {
+if (isNaN(x) || x < 0) {
   console.log('missing number of occurrences');
 } else {
   for (let i = 0; i < x; i++) {
