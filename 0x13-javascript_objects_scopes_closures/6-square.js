@@ -7,8 +7,8 @@ module.exports = class Square extends BaseSquare {
     if (c === undefined) {
       this.print();
     } else {
-      for (let i = 0; i < this.size; i++) {
-        console.log(c.repeat(this.size));
+      for (let i = 0; i < this.width; i++) {
+        console.log(c.repeat(this.height));
       }
     }
   }
