@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-""" Return all table values where the name matches the argument - safe from MySQL injections! """
+"""
+Return all table values where the name matches the argument
+safe from MySQL injections!
+"""
 
 import MySQLdb
 from sys import argv
@@ -24,7 +27,7 @@ if __name__ == "__main__":
     )
 
     for state in cursor.fetchall():
-            print(state)
+        print(state)
 
     """ Close cursor and database connection """
     cursor.close()
