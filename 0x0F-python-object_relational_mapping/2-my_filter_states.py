@@ -20,7 +20,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
     cursor.execute(
         """SELECT *
-        FROM states WHERE name = %s ORDER BY id ASC""", (argv[4], )
+        FROM states WHERE name LIKE '{:s}' ORDER BY id ASC""".format(argv[4])
     )
 
     for state in cursor.fetchall():
