@@ -19,10 +19,13 @@ if __name__ == "__main__":
     """ Create cursor """
     cursor = db.cursor()
     cursor.execute(
-        "SELECT * FROM states WHERE name = %s ORDER BY id ASC",
-        (argv[4],)
+        "SELECT *
+        FROM states WHERE name = %s
+        ORDER BY id ASC", (argv[4],)
     )
+
     for state in cursor.fetchall():
+        if state[1] == argv[4]:
         print(state)
 
     """ Close cursor and database connection """
