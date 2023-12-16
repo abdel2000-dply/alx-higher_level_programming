@@ -3,10 +3,9 @@
 lists all State objects from the database hbtn_0e_6_usa
 """
 
-from SQLAlchemy import create_engine
+from SQLAlchemy import create_engine, select
 from sys import argv
 from model_state import Base, State
-from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     # Connect to the database
@@ -18,10 +17,9 @@ if __name__ == "__main__":
         .format(user, passwd, db)
     )
 
-    Session = sessionmaker(bind=engine)
-    session = Session()
-
-    states = session.query(State).order_by(State.id)
+    conn = engine.connect()
+    query = select(State).order_by(State.id)
+    states = conn.execute(query)
     for state in states:
         print("{:d}: {:s}".format(state.id, state.name))
 
