@@ -22,13 +22,12 @@ if __name__ == "__main__":
     cursor = db.cursor()
     cursor.execute(
         """SELECT cities.name
-        FROM cities JOIN states ON cities.state_id = states.id
-        WHERE states.name = %s
+        FROM states JOIN cities ON cities.state_id = states.id
+        WHERE states.name LIKE %s
         ORDER BY cities.id ASC""", (argv[4],)
     )
 
-    for state in cursor.fetchall():
-        print(state)
+    print(', '.join(["{:s}".format(row[0]) for row in cursor.fetchall()]))
 
     """ Close cursor and database connection """
     cursor.close()
