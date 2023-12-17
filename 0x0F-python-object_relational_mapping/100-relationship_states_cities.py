@@ -9,6 +9,7 @@ from relationship_city import City
 
 
 if __name__ == "__main__":
+
     username, password, db_name = argv[1], argv[2], argv[3]
 
     engine = create_engine(
