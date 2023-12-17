@@ -3,9 +3,11 @@
  the class definition of a State
 """
 from sqlalchemy import Column, Integer, String
-from relationship_city import Base, City
 from sqlalchemy.orm import relationship
+from sqlalchemy.ext.declarative import declarative_base
 
+
+Base = declarative_base()
 
 class State(Base):
     """
