@@ -1,3 +1,3 @@
 #!/bin/bash
-# Only status code
-curl -sI "$1" | grep HTTP/1.1 | awk '{print $2}'
+#Only status code
+curl -sw '%{http_code}' -o /dev/null "$1"01~
