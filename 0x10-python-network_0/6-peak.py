@@ -3,6 +3,7 @@
 
 
 def find_peak(list_of_integers):
+    """ find peak function """
     if list_of_integers:
         low, high = 0, len(list_of_integers) - 1
         while low < high:
