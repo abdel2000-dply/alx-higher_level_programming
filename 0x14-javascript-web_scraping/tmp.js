@@ -4,7 +4,7 @@ const id = 18;
 const url = process.argv[2];
 
 request.get(url, (err, response, body) => {
-  if (err) console.log(err);
+  if (err) console.error(err);
 
   const data = JSON.parse(body);
   const films = data.results.reduce((count, film) => {
